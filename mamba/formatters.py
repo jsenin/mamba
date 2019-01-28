@@ -118,6 +118,7 @@ class DocumentationFormatter(Formatter):
             for index, failed in enumerate(failed_examples):
                 puts('%d) %s' % (index + 1, self.format_full_example_name(failed)))
                 with indent(3):
+                    puts(self._color('red', 'File:'. format(self.format_failure(failed))))
                     puts(self._color('red', self.format_failure(failed)))
                     puts()
 
